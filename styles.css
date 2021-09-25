@@ -38,6 +38,12 @@ li a.active {
     color: white;
 }
 
+/* Header */
+
+.header {
+    padding-top: 50px;
+}
+
 /* The hidden fifth page. WOW!*/
 
 .fifthPageBtn {
@@ -56,4 +62,9 @@ li a.active {
 #fifthPage {
     background-image: url("https://www.k2preschoolacademy.co.uk/wp-content/uploads/2020/05/Hd-celebration-clipart-class-party-clip-art-free-images-photos.jpg");
     background-size: cover;
+}
+
+#fifthPageHeader {
+    color: magenta;
+    padding-top: 50px;
 }
