@@ -44,8 +44,8 @@ li a.active {
     background-color: #f1f1f1;
     color: #f1f1f1;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    text-decoration: none;
+    border: none;
 }
 
 .fifthPageBtn a:hover {
