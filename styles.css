@@ -67,9 +67,7 @@ li a.active {
 #fifthPageHeader {
     color: magenta;
     padding-top: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
 }
 
 /* The fake fifth page, which is actually the sixth page made */
@@ -81,8 +79,6 @@ li a.active {
 
 #fakeFifthPageHeader {
     color: red;
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    padding-top: 50px;
 }
