@@ -71,3 +71,18 @@ li a.active {
     justify-content: center;
     align-items: center;
 }
+
+/* The fake fifth page, which is actually the sixth page made */
+
+#fakeFifthPage {
+    background-image: url("https://static.toiimg.com/thumb/msid-84995322,width-1200,height-900,resizemode-4/.jpg");
+    background-size: cover;
+}
+
+#fakeFifthPageHeader {
+    color: red;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
