@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Motorhomes</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+
+<body class="manageBg">
+
+<div class="topmenu">
+    <a th:href="@{'/'}">Home</a>
+    <a class="active" th:href="@{'/motorhomeIndex/'}">Manage Motorhome</a>
+    <a th:href="@{'/contractIndex/'}">Manage Contract</a>
+    <a th:href="@{'/customerIndex/'}">Manage Customer</a>
+    <a th:href="@{'/extraIndex/'}">Manage Extra</a>
+    <a th:href="@{'/autoServiceIndex/'}">Auto Service</a>
+</div>
+
+
+<div class="relative">
+    <img class="headerImg blur" src="https://i.redd.it/cr9cz1ts82071.png">
+    <h1 class="headerTitle">Motorhome Management</h1>
+</div>
+
+<div class="table">
+    <table>
+
+        <tr>
+            <th class="genericTableHeader relative" colspan="100%">Motorhomes <span class="addButtonContainer">
+                        <a th:href="@{'/createMotorhome/'}">
+                            <button type="button" class="addNewButton">+ Add new motorhome</button>
+                        </a>
+                    </span></th>
+        </tr>
+
+        <tbody>
+        <th style="background-color: white">Licence Plate</th>
+        <th style="background-color: white">Brand</th>
+        <th style="background-color: white">Model</th>
+        <th style="background-color: white">Type</th>
+        <th style="background-color: white">Description</th>
+        <th style="background-color: white">Price</th>
+        <th style="background-color: white">Availability</th>
+        <th style="background-color: white" colspan="100%">Actions</th>
+
+        <tr th:each="motorhome : ${motorhomes}">
+            <td th:text="${motorhome.licencePlate}"></td>
+            <td th:text="${motorhome.brand}"></td>
+            <td th:text="${motorhome.model}"></td>
+            <td th:text="${motorhome.type}"></td>
+            <td th:text="${motorhome.description}"></td>
+            <td th:text="${motorhome.price} + €"></td>
+            <td th:if="${motorhome.available}">Available</td>
+            <td th:if="${!motorhome.available}">Unavailable</td>
+
+            <td class="actions">
+                <a th:href="@{'/editMotorhome/'+${motorhome.licencePlate}}">
+                    <button class="edit-button" type="button">Edit</button>
+                </a>
+            </td>
+
+            <td class="actions">
+                <a th:href="@{'/deleteMotorhome/'+${motorhome.licencePlate}}">
+                    <!-- help from https://stackoverflow.com/questions/59992208/thymeleaf-thonclick-event-calling-confirm-function -->
+                    <button class="delete-button" type="button"
+                            th:confirm="'Are you sure you want to delete ' + ${motorhome.licencePlate} + '?'"
+                            onclick="return confirm(this.getAttribute('confirm'))">Delete
+                    </button>
+
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+</body>
+</html>
