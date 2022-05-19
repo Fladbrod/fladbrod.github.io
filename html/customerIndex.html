@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="author" content="Joachim">
+    <meta charset="UTF-8">
+    <title>Manage Customer</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body class="manageBg">
+
+<div class="topmenu">
+    <a href="/">Home</a>
+    <a href="motorhomeIndex.html">Manage Motorhome</a>
+    <a href="contractIndex.html">Manage Contract</a>
+    <a class="active" href="customerIndex.html">Manage Customer</a>
+    <a href="extraIndex.html">Manage Extra</a>
+    <a href="autoServiceIndex.html">Auto Service</a>
+</div>
+
+<div class="relative">
+    <img class="headerImg blur" src="https://i.redd.it/cr9cz1ts82071.png">
+    <h1 class="headerTitle">Customer Management</h1>
+</div>
+<div class="table">
+    <table>
+
+
+        <tr>
+            <th class="genericTableHeader relative" colspan="100%">Customers<span class="addButtonContainer">
+                        <a th:href="@{'/createCustomer/'}">
+                            <button type="button" class="addNewButton">+ Add new customer</button>
+                        </a>
+                    </span></th>
+        </tr>
+
+        <tbody>
+        <th style="background-color: white">Customer Name</th>
+        <th style="background-color: white">Licence Number</th>
+        <th style="background-color: white">Street</th>
+        <th style="background-color: white">Postcode</th>
+        <th style="background-color: white">City</th>
+        <th style="background-color: white" colspan="100">Actions</th>
+
+        <tr th:each="customer : ${customers}">
+            <td th:text="${customer.name}"></td>
+            <td th:text="${customer.licenceNumber}"></td>
+            <td th:text="${customer.street}"></td>
+            <td th:text="${customer.postCode}"></td>
+            <td th:text="${customer.city}"></td>
+
+            <td class="actions">
+                <a th:href="@{'/editCustomer/'+${customer.customerNumber}}">
+                    <button class="edit-button" type="button">Edit</button>
+                </a>
+            </td>
+
+            <td class="actions">
+                <a th:href="@{'/deleteCustomer/'+${customer.customerNumber}}">
+                    <button class="delete-button" type="button"
+                            th:confirm="'Are you sure you want to delete ' + ${customer.name} + '?'"
+                            onclick="return confirm(this.getAttribute('confirm'))">Delete
+                    </button>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
