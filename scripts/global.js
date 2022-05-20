@@ -19,19 +19,19 @@ navBar.innerHTML = `
         </div>
     </div>
     <div class="middle">
-    <a href="../html/overview.html">
+    <a href="../moranti_html/overview.html">
         <p><b>Overblik</b></p>
     </a>
-    <a href="../html/waitinglist.html">
+    <a href="../moranti_html/waitinglist.html">
         <p><b>Venteliste</b></p>
     </a>
-    <a href="../html/cars.html">
+    <a href="../moranti_html/cars.html">
         <p><b>Biler</b></p>
     </a>
-    <a href="../html/employees.html">
+    <a href="../moranti_html/employees.html">
         <p><b>Ansatte</b></p>
     </a>
-    <a href="../html/caseType.html">
+    <a href="../moranti_html/caseType.html">
         <p><b>Sagstyper</b></p>
     </a>
     <div id="week-number"></div>
