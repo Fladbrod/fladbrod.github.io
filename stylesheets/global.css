@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Staatliches&display=swap');
+
+/*nav bar */
+#nav-bar {
+    background-color: #143c5a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.5);
+}
+
+#nav-bar .end {
+    width: 18.75rem;
+}
+
+#nav-bar a {
+    text-decoration: none;
+}
+
+#nav-bar div {
+    display: flex;
+}
+
+#nav-bar p {
+    color: #ffffff;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-family: "Muli", sans-serif;
+    text-decoration: none;
+
+}
+
+/*With help from https://stackoverflow.com/questions/7849112/css-how-to-add-round-corners-when-hover-li-element/7849193*/
+#nav-bar p:hover {
+    background-color: mintcream;
+    cursor: pointer;
+    color: #143c5a;
+    border-radius: 10px 10px 10px 10px;
+}
+
+#nav-bar h3, h4 {
+    color: white;
+}
+
+.logo {
+    height: 4.69rem;
+    width: 18.75rem;
+}
+
+.middle {
+    margin: auto;
+}
+
+.relative {
+    position: relative;
+}
+
+body {
+    padding-top: 7rem;
+    background-color: lightgrey;
+    /*overflow: auto auto;*/
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: "Muli", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+h2, h3 {
+    margin: 0.5rem 0 0 0;
+    padding-top: 1rem;
+    white-space: nowrap;
+}
+
+
+.table-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.table-div table {
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+    font-family: "Muli", sans-serif;
+}
+
+.table-div td {
+    word-wrap: break-word;
+    max-width: 15rem;
+    text-align: center;
+    padding: 0.1rem 0.5rem 0 0.5rem;
+
+}
+
+.table-div tr {
+    border-bottom: 2px solid gray;
+}
+
+.table-div tbody tr:hover {
+    background-color: #cbcbcb;
+}
+
+.table-div th {
+    padding: 1rem;
+}
+
+table caption {
+    text-align: left;
+}
+
+thead {
+    background-color: darkgray;
+}
+
+/*Made with help from https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp
+Fjerner pile fra nummerfelter fra Crhome, Safari, Edge, Opera*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/*Fjerner pile fra nummerfelter fra Firefox*/
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+    z-index: 1;
+
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    width: 13rem;
+    padding: 0 15px 15px 15px;
+    border: 1px solid rgba(128, 128, 128, 0.39);
+    border-radius: 10px;
+}
+
+.modal-content h3 {
+    margin: 0 0 8px 0;
+}
+
+.modal-content input, .modal-content select {
+    margin-bottom: 8px;
+}
+
+/*Styling Selectbox*/
+
+/* Remove IE arrow */
+
+
+select::-ms-expand {
+    display: none;
+}
+.box {
+
+    /* styling */
+    background-color: white;
+    border: thin solid gray;
+    border-radius: 4px;
+    display: inline-block;
+    font: inherit;
+    line-height: 1em;
+    padding: 0.3em 1.8em 0.3em 0.5em;
+
+    /* reset */
+
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* Arrow */
+
+.minimal {
+    background-image:
+            linear-gradient(45deg, transparent 50%, gray 50%),
+            linear-gradient(135deg, gray 50%, transparent 50%),
+            linear-gradient(to right, #ccc, #ccc);
+    background-position:
+            calc(100% - 12px) calc(0.6em + 2px),
+            calc(100% - 9px) calc(0.6em + 2px),
+            calc(100% - 1.5em) 0.3em;
+    background-size:
+            3px 3px,
+            3px 3px,
+            1px 1.5em;
+    background-repeat: no-repeat;
+}
+.minimal:focus {
+    background-image:
+            linear-gradient(45deg, #1c1a1a 50%, transparent 50%),
+            linear-gradient(135deg, transparent 50%, #1c1a1a 50%),
+            linear-gradient(to right, #ccc, #ccc);
+    background-position:
+            calc(100% - 9px) 0.6em,
+            calc(100% - 12px) 0.6em,
+            calc(100% - 1.5em) 0.3em;
+    background-size:
+            3px 3px,
+            3px 3px,
+            1px 1.5em;
+    background-repeat: no-repeat;
+    border-color: #1c1a1a;
+    outline: 0;
+}
+
+/*Styling buttons*/
+
+.button1{
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#000000;
+    text-align:center;
+    transition: all 0.2s;
+}
+.button1:hover{
+    color:#000000;
+    background-color: white;
+}
+/*Uge number*/
+#week-number {
+    font-size: 1rem;
+    font-family: 'Krona One', sans-serif;
+    color: lightgrey;
+    position: relative;
+    padding-top: 29px;
+    transform: translateX(100%);
+}
+
+#shift-leader-div {
+    position: absolute;
+}
+
+.shift-leader-info {
+    display: flex;
+}
+
+.shift-leader-info ul{
+    list-style-type: none;
+}
+
+.shift-leader-info li{
+    color: white;
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../stylesheets/global.css">
+    <link rel="stylesheet" href="../stylesheets/overview.css">
+    <meta charset="UTF-8">
+    <title>Ude og hjemme</title>
+</head>
+<body>
+<nav id="nav-bar"></nav>
+
+
+<div class="relative">
+    <div id="procedure-text-div" contenteditable="true"></div>
+    <div id="waiting-list-div"></div>
+</div>
+
+<div class="relative">
+    <br>
+    <br>
+    <div class="table-div" class="table">
+        <table id="shift-table">
+            <caption>
+                <h3>Vagter
+                    <button id="add-shift-button" class="button1">➕</button>
+                </h3>
+            </caption>
+            <thead>
+            <tr>
+                <th>Bil#</th>
+                <th>Vagttelefon</th>
+                <th>Nummerplade</th>
+                <th>Sanitør</th>
+                <th>Arbejdstelefon</th>
+                <th>Prioritet</th>
+                <th>Sagsnummer</th>
+                <th>Type</th>
+                <th>Område</th>
+                <th>Bemærkning</th>
+                <th>Handlinger</th>
+            </tr>
+            </thead>
+
+            <tbody id="shift-tbody"></tbody>
+        </table>
+        <table id="graffiti-table">
+            <caption>
+                <h3>Graffiti
+                    <button id="add-graffiti-button" class="button1">➕</button>
+                </h3>
+            </caption>
+            <thead>
+            <tr>
+                <th>Bil#</th>
+                <th>Vagttelefon</th>
+                <th>Nummerplade</th>
+                <th>Sanitør</th>
+                <th>Arbejdstelefon</th>
+                <th>Prioritet</th>
+                <th>Sagsnummer</th>
+                <th>Type</th>
+                <th>Område</th>
+                <th>Bemærkning</th>
+                <th>Handlinger</th>
+            </tr>
+            </thead>
+
+            <tbody id="graffiti-tbody"></tbody>
+        </table>
+        <table id="foal-table">
+            <caption>
+                <h3>Føl
+                    <button id="add-intern-button" class="button1">➕</button>
+                </h3>
+            </caption>
+            <thead>
+            <tr>
+                <th>Føl</th>
+                <th>Arbejdstelefon</th>
+                <th>Prioritet</th>
+                <th>Sagsnummer</th>
+                <th>Type</th>
+                <th>Område</th>
+                <th>Bemærkning</th>
+                <th>Handlinger</th>
+            </tr>
+            </thead>
+
+            <tbody id="foal-tbody"></tbody>
+        </table>
+    </div>
+</div>
+
+<div id="new-case-modal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <br>
+        <div class="overview-modal">
+            <div>
+                <h3>Tildel ny sag</h3>
+                <label for="new-case-number">Sagsnummer</label><br><input type="number" id="new-case-number">
+                <br>
+                <label for="new-case-area">Område</label><br><input type="text" id="new-case-area">
+                <br>
+                <label for="new-case-type">Type</label><br><select name="type" id="new-case-type" class="box minimal"></select>
+                <br>
+                <div id="new-case-submit"></div>
+            </div>
+            <div id="new-waitlist-div">
+                <h3>Der er sager i vent</h3>
+                <label for="new-waitlist-case-select">Sager i vent</label><select id="new-waitlist-case-select"
+                                                                                  class="waiting-select box minimal"></select>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../scripts/global.js"></script>
+<script src="../scripts/shiftleader.js"></script>
+<script src="../scripts/overview.js"></script>
+</body>
+</html>
