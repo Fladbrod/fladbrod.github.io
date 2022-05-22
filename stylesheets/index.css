@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+h4 {
+    color: white;
+    font-size: 1.4rem;
+    margin-bottom: 0.4rem;
+}
+
+h5 {
+    color: #0a3b5d;
+}
+
+.page-content {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.page-wrapper {
+    max-width: 100vw;
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom, #4fe1e7, #0e4264););
+    background-position: center;
+    padding-top: 6rem;
+}
+
+.project {
+    background-color: #9dc3e5;
+    padding: 1.4rem;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: 0.3s;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: top;
+    margin-bottom: 1rem;
+    border-radius: 15px;
+}
+
+.project p {
+    color: #133424;
+    font-weight: 600;
+}
+
+.project:hover {
+    transform: translateY(-8px);
+}
+
+.project-link {
+    color: #0a3b5d;
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+.project-link svg {
+    height: 24px;
+}
+
+.project-click {
+    text-decoration: none;
+}

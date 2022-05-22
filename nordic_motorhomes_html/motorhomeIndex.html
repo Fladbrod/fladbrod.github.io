@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Manage Motorhomes</title>
-    <link rel="stylesheet" type="text/css" href="/stylesheets/styles.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/nordic_motorhomes_css/styles.css">
 </head>
 
 <body class="manageBg">
@@ -52,8 +52,8 @@
             <td th:text="${motorhome.type}"></td>
             <td th:text="${motorhome.description}"></td>
             <td th:text="${motorhome.price} + €"></td>
-            <td th:if="${motorhome.available}">Available</td>
-            <td th:if="${!motorhome.available}">Unavailable</td>
+            <td th:if="${motorhome.available}"></td>
+            <td th:if="${!motorhome.available}"></td>
 
             <td class="actions">
                 <a th:href="@{'/editMotorhome/'+${motorhome.licencePlate}}">
