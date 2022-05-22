@@ -41,9 +41,9 @@ h5 {
 .page-wrapper {
     max-width: 100vw;
     min-height: 100vh;
-    background-image: linear-gradient(to bottom, #4fe1e7, #0e4264););
+    background-image: linear-gradient(to top, #6edce3, #0e4264););
     background-position: center;
-    padding-top: 6rem;
+    padding-top: 8rem;
 }
 
 .project {
