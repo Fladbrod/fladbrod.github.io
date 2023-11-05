@@ -1,55 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Ansatte</title>
     <link rel="stylesheet" href="../stylesheets/moranti_css/global.css">
     <link rel="stylesheet" href="../stylesheets/moranti_css/employees.css">
 </head>
+
 <body>
-<nav id="nav-bar"></nav>
+    <nav id="nav-bar"></nav>
 
-<div class="table-div">
-    <table>
-        <caption><h2>Ansatte</h2></caption>
-        <thead>
-        <tr>
-            <th>Navn</th>
-            <th>Arbejdstelefon</th>
-            <th>Ansvarsområde</th>
-            <th class="hover-th" id="new-employee-button">+ Ny Ansat</th>
-        </tr>
-        </thead>
-        <tbody id="employees-tbody"></tbody>
-    </table>
-</div>
-
-<div id="new-employee-modal" class="modal">
-
-    <!-- Modal content -->
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <br>
-        <h3>Opret ansat</h3>
-
-        <label for="new-employee-name">Ansattes navn</label><input type="text" id="new-employee-name"
-    >
-        <label for="new-employee-work-phone-number">Arbejdstelefon nummer</label><input type="text"
-                                                                                        id="new-employee-work-phone-number"
-    >
-        <label for="new-employee-sanitary"><input type="checkbox" id="new-employee-sanitary" placeholder="sanitør">Sanitør</label>
-        <br>
-        <label for="new-employee-shift-leader"><input type="checkbox" id="new-employee-shift-leader"
-                                                      placeholder="vagtleder">Vagtleder</label>
-        <br>
-        <label for="new-employee-intern"><input type="checkbox" id="new-employee-intern" placeholder="føl">Føl</label>
-        <br>
-        <button id="new-employee-submit" class="button1">Opret ansat</button>
+    <div class="table-div">
+        <table>
+            <caption>
+                <h2>Ansatte</h2>
+            </caption>
+            <thead>
+                <tr>
+                    <th>Navn</th>
+                    <th>Arbejdstelefon</th>
+                    <th>Ansvarsområde</th>
+                    <th class="hover-th" id="new-employee-button">+ Ny Ansat</th>
+                </tr>
+            </thead>
+            <tbody id="employees-tbody"></tbody>
+        </table>
     </div>
-</div>
 
-<script src="../scripts/global.js"></script>
-<script src="../scripts/shiftleader.js"></script>
-<script src="../scripts/employees.js"></script>
+    <div id="new-employee-modal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <br>
+            <h3>Opret ansat</h3>
+
+            <label for="new-employee-name">Ansattes navn</label><input type="text" id="new-employee-name">
+            <label for="new-employee-work-phone-number">Arbejdstelefon nummer</label><input type="text"
+                id="new-employee-work-phone-number">
+            <label for="new-employee-sanitary"><input type="checkbox" id="new-employee-sanitary"
+                    placeholder="sanitør">Sanitør</label>
+            <br>
+            <label for="new-employee-shift-leader"><input type="checkbox" id="new-employee-shift-leader"
+                    placeholder="vagtleder">Vagtleder</label>
+            <br>
+            <label for="new-employee-intern"><input type="checkbox" id="new-employee-intern"
+                    placeholder="føl">Føl</label>
+            <br>
+            <button id="new-employee-submit" class="button1">Opret ansat</button>
+        </div>
+    </div>
+
+    <script src="../scripts/global.js"></script>
+    <script src="../scripts/shiftleader.js"></script>
+    <script src="../scripts/employees.js"></script>
 </body>
+
 </html>

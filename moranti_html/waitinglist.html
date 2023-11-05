@@ -1,47 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="../stylesheets/moranti_css/global.css">
     <link rel="stylesheet" href="../stylesheets/moranti_css/waitinglist.css">
     <meta charset="UTF-8">
     <title>Venteliste</title>
 </head>
+
 <body>
-<nav id="nav-bar"></nav>
+    <nav id="nav-bar"></nav>
 
-<div class="table-div">
-    <table>
-        <caption><h2>Venteliste</h2></caption>
-        <thead>
-        <tr>
-            <th>Sagsnummer</th>
-            <th>Type</th>
-            <th>Område</th>
-            <th class="hover-th" id="new-waiting-case-button">+ Ny Sag</th>
-        </tr>
-        </thead>
-        <tbody id="waitingList-tbody"></tbody>
-    </table>
-</div>
-
-<div id="new-waiting-case-modal" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <br>
-        <h3>Tildel ny sag</h3>
-        <label for="new-waiting-case-number">Sagsnummer</label><br><input type="number" id="new-waiting-case-number">
-        <br>
-        <label for="new-waiting-case-area">Område</label><br><input type="text" id="new-waiting-case-area">
-        <br>
-        <label for="new-waiting-case-type">Type: </label><br><select name="type" id="new-waiting-case-type" class="box minimal"></select>
-        <br>
-        <button id="new-waiting-case-submit" class="button1">Opret sag</button>
+    <div class="table-div">
+        <table>
+            <caption>
+                <h2>Venteliste</h2>
+            </caption>
+            <thead>
+                <tr>
+                    <th>Sagsnummer</th>
+                    <th>Type</th>
+                    <th>Område</th>
+                    <th class="hover-th" id="new-waiting-case-button">+ Ny Sag</th>
+                </tr>
+            </thead>
+            <tbody id="waitingList-tbody"></tbody>
+        </table>
     </div>
-</div>
 
-<script src="../scripts/global.js"></script>
-<script src="../scripts/shiftleader.js"></script>
-<script src="../scripts/waitingList.js"></script>
+    <div id="new-waiting-case-modal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <br>
+            <h3>Tildel ny sag</h3>
+            <label for="new-waiting-case-number">Sagsnummer</label><br><input type="number"
+                id="new-waiting-case-number">
+            <br>
+            <label for="new-waiting-case-area">Område</label><br><input type="text" id="new-waiting-case-area">
+            <br>
+            <label for="new-waiting-case-type">Type: </label><br><select name="type" id="new-waiting-case-type"
+                class="box minimal"></select>
+            <br>
+            <button id="new-waiting-case-submit" class="button1">Opret sag</button>
+        </div>
+    </div>
+
+    <script src="../scripts/global.js"></script>
+    <script src="../scripts/shiftleader.js"></script>
+    <script src="../scripts/waitingList.js"></script>
 </body>
+
 </html>

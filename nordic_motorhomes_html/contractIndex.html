@@ -1,98 +1,101 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
+
 <head>
     <meta charset="UTF-8">
     <title>Contract Management</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/nordic_motorhomes_css/styles.css">
 </head>
+
 <body class="manageBg">
 
-<div class="topmenu">
-    <a href="index.html">Home</a>
-    <a href="motorhomeIndex.html">Manage Motorhome</a>
-    <a class="active" href="contractIndex.html">Manage Contract</a>
-    <a href="customerIndex.html">Manage Customer</a>
-    <a href="extraIndex.html">Manage Extra</a>
-    <a href="autoServiceIndex.html">Auto Service</a>
-</div>
+    <div class="topmenu">
+        <a href="index.html">Home</a>
+        <a href="motorhomeIndex.html">Manage Motorhome</a>
+        <a class="active" href="contractIndex.html">Manage Contract</a>
+        <a href="customerIndex.html">Manage Customer</a>
+        <a href="extraIndex.html">Manage Extra</a>
+        <a href="autoServiceIndex.html">Auto Service</a>
+    </div>
 
-<div class="relative">
-    <img class="headerImg blur" src="https://i.redd.it/cr9cz1ts82071.png">
-    <h1 class="headerTitle">Contract Management</h1>
-</div>
+    <div class="relative">
+        <img class="headerImg blur" src="https://i.redd.it/cr9cz1ts82071.png">
+        <h1 class="headerTitle">Contract Management</h1>
+    </div>
 
-<div class="table">
+    <div class="table">
 
-    <table>
-        <tr>
-            <th class="genericTableHeader relative" colspan="100%"> <span class="closedButtonContainer">
-            <a th:href="@{'/closedContracts/'}">
-                <button type="button" class="closedContractsButton">View Closed Contracts</button>
-            </a>
+        <table>
+            <tr>
+                <th class="genericTableHeader relative" colspan="100%"> <span class="closedButtonContainer">
+                        <a th:href="@{'/closedContracts/'}">
+                            <button type="button" class="closedContractsButton">View Closed Contracts</button>
+                        </a>
                     </span> Contracts <span class="addButtonContainer">
                         <a th:href="@{'/createContract/'}">
                             <button type="button" class="addNewButton">+ Add new contract</button>
                         </a>
                     </span>
-            </th>
-        </tr>
+                </th>
+            </tr>
 
-        <tbody>
-        <th style="background-color: white">Contract start date</th>
-        <th style="background-color: white">Contract end date</th>
-        <th style="background-color: white">Odometer</th>
-        <th style="background-color: white">Customer Number</th>
-        <th style="background-color: white">Customer Name</th>
-        <th style="background-color: white">Motorhome</th>
-        <th style="background-color: white">Delivery Point</th>
-        <th style="background-color: white">Pick Up Point</th>
-        <th style="background-color: white" colspan="100%">Actions</th>
+            <tbody>
+                <th style="background-color: white">Contract start date</th>
+                <th style="background-color: white">Contract end date</th>
+                <th style="background-color: white">Odometer</th>
+                <th style="background-color: white">Customer Number</th>
+                <th style="background-color: white">Customer Name</th>
+                <th style="background-color: white">Motorhome</th>
+                <th style="background-color: white">Delivery Point</th>
+                <th style="background-color: white">Pick Up Point</th>
+                <th style="background-color: white" colspan="100%">Actions</th>
 
-        <tr th:each="contract : ${contracts}">
-            <td th:text="${contract.getFromDateAsString}"></td>
-            <td th:text="${contract.getToDateAsString}"></td>
-            <td th:text="${contract.odometer}"></td>
-            <td th:text="${contract.customer.getCustomerNumber()}"></td>
-            <td th:text="${contract.customer.getName()}"></td>
-            <td th:text="${contract.motorhome.getLicencePlate()}"></td>
-            <td th:text="${contract.getDeliveryPoint()}"></td>
-            <td th:text="${contract.getPickupPoint}"></td>
+                <tr th:each="contract : ${contracts}">
+                    <td th:text="${contract.getFromDateAsString}"></td>
+                    <td th:text="${contract.getToDateAsString}"></td>
+                    <td th:text="${contract.odometer}"></td>
+                    <td th:text="${contract.customer.getCustomerNumber()}"></td>
+                    <td th:text="${contract.customer.getName()}"></td>
+                    <td th:text="${contract.motorhome.getLicencePlate()}"></td>
+                    <td th:text="${contract.getDeliveryPoint()}"></td>
+                    <td th:text="${contract.getPickupPoint}"></td>
 
-            <td class="actions" th:if="${!contract.delivered}">
-                <a th:href="@{'/deliverContract/'+${contract.contractId}}">
-                    <button type="button">Deliver</button>
-                </a>
-            </td>
-            <td class="actions" th:if="${!contract.pickedUp} AND ${contract.delivered}">
-                <a th:href="@{'/pickupContract/'+${contract.contractId}}">
-<!--                    <button class="close-button" type="button">Pick up</button>-->
-                </a>
-            </td>
-            <td class="actions" th:if="${!contract.closed} AND ${contract.pickedUp}">
-                <a th:href="@{'/closeContract/'+${contract.contractId}}">
-<!--                    <button class="close-button" type="button">Close</button>-->
-                </a>
-            </td>
-            <td class="actions">
-                <a th:href="@{'/editContract/'+${contract.contractId}}">
-                    <button class="edit-button" type="button">Edit</button>
-                </a>
-            </td>
-            <td class="actions">
-                <a th:href="@{'/cancelContract/'+${contract.contractId}}">
-                    <button class="delete-button" type="button"
-                            onclick="return confirm('Are you sure you want to cancel this contract?')">
-                        Cancel Contract
-                    </button>
-                </a>
-            </td>
+                    <td class="actions" th:if="${!contract.delivered}">
+                        <a th:href="@{'/deliverContract/'+${contract.contractId}}">
+                            <button type="button">Deliver</button>
+                        </a>
+                    </td>
+                    <td class="actions" th:if="${!contract.pickedUp} AND ${contract.delivered}">
+                        <a th:href="@{'/pickupContract/'+${contract.contractId}}">
+                            <!--                    <button class="close-button" type="button">Pick up</button>-->
+                        </a>
+                    </td>
+                    <td class="actions" th:if="${!contract.closed} AND ${contract.pickedUp}">
+                        <a th:href="@{'/closeContract/'+${contract.contractId}}">
+                            <!--                    <button class="close-button" type="button">Close</button>-->
+                        </a>
+                    </td>
+                    <td class="actions">
+                        <a th:href="@{'/editContract/'+${contract.contractId}}">
+                            <button class="edit-button" type="button">Edit</button>
+                        </a>
+                    </td>
+                    <td class="actions">
+                        <a th:href="@{'/cancelContract/'+${contract.contractId}}">
+                            <button class="delete-button" type="button"
+                                onclick="return confirm('Are you sure you want to cancel this contract?')">
+                                Cancel Contract
+                            </button>
+                        </a>
+                    </td>
 
-        </tr>
-        </tbody>
+                </tr>
+            </tbody>
 
-    </table>
+        </table>
 
-</div>
+    </div>
 
 </body>
+
 </html>
